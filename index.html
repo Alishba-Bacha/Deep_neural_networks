@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Trainer</title>
+    <style>
+        body {
+            background-image: url('../static/background-image.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: large;
+            font-weight: 600;
+            font-style: oblique;
+            color: white;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h1>Upload Dataset & Configure Hyperparameters</h1>
+    <form id="Header" action="/" method="post" enctype="multipart/form-data">
+        <label for="file">Choose CSV File:</label>
+        <input type="file" name="file" required><br><br>
+
+        <label for="test_size">Test Size (0-1):</label>
+        <input type="number" name="test_size" value="0.2" step="0.01"><br><br>
+
+        <label for="neurons">Neurons per Layer:</label>
+        <input type="number" name="neurons" value="128"><br><br>
+
+        <label for="layers">Number of Layers:</label>
+        <input type="number" name="layers" value="2"><br><br>
+
+        <label for="learning_rate">Learning Rate:</label>
+        <input type="number" name="learning_rate" value="0.001" step="0.001"><br><br>
+
+        <label for="dropout_rate">Dropout Rate:</label>
+        <input type="number" name="dropout_rate" value="0.3" step="0.1"><br><br>
+
+        <label for="optimizer">Optimizer:</label>
+        <select name="optimizer">
+            <option value="adam">Adam</option>
+            <option value="sgd">SGD</option>
+        </select><br><br>
+
+        <label for="batch_size">Batch Size:</label>
+        <input type="number" name="batch_size" value="32"><br><br>
+
+        <label for="epochs">Epochs:</label>
+        <input type="number" name="epochs" value="10"><br><br>
+
+        <label for="problem_type">Problem Type:</label>
+        <select name="problem_type">
+            <option value="classification">Classification</option>
+            <option value="regression">Regression</option>
+        </select><br><br>
+
+        <input type="submit" value="Train Model">
+    </form>
+</body>
+
+</html>
